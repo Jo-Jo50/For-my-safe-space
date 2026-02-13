@@ -3,48 +3,189 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Will You Be My Valentine? 💕</title>
-<link rel="stylesheet" href="css/styles.css">
+<title>Valentine Special</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+h1 {
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #ff4b5c;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* Popup Background */
+#popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Popup Card */
+.popup-content {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    animation: pop 0.5s ease;
+    color: white;
+    padding: 20px;
+}
+
+@keyframes pop {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+/* HEART (Valentine) */
+.valentine {
+    background: red;
+    clip-path: polygon(50% 15%, 61% 0, 80% 0, 100% 20%, 100% 40%, 50% 100%, 0 40%, 0 20%, 20% 0, 39% 0);
+}
+
+/* Rose */
+.rose {
+    background: #e60026;
+    border-radius: 50% 50% 40% 40%;
+}
+
+/* Propose (Ring Shape) */
+.propose {
+    background: gold;
+    border-radius: 50%;
+    border: 10px solid #fff;
+}
+
+/* Chocolate */
+.chocolate {
+    background: #5c3317;
+    border-radius: 15px;
+}
+
+/* Teddy */
+.teddy {
+    background: #c68642;
+    border-radius: 40%;
+}
+
+/* Promise */
+.promise {
+    background: #ff69b4;
+    border-radius: 20px 50px;
+}
+
+/* Hug */
+.hug {
+    background: #ff8fab;
+    border-radius: 50%;
+}
+
+/* Kiss */
+.kiss {
+    background: #ff0066;
+    clip-path: ellipse(50% 35% at 50% 50%);
+}
+
+.popup-text {
+    position: absolute;
+    width: 80%;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: -50px;
+    background: white;
+    color: #ff4b5c;
+}
+</style>
 </head>
+
 <body>
 
-  <!-- Background slider container -->
-  <div id="bgContainer">
-    <img src="images/IMG1.jpg" class="bg-photo active">
-    <img src="images/IMG2.jpg" class="bg-photo">
-    <img src="images/IMG3.jpg" class="bg-photo">
-    <img src="images/IMG4.jpg" class="bg-photo">
-    <img src="images/IMG5.jpg" class="bg-photo">
-    <img src="images/IMG6.jpg" class="bg-photo">
-    <img src="images/IMG7.jpg" class="bg-photo">
-    <img src="images/IMG8.jpg" class="bg-photo">
-    <img src="images/IMG9.jpg" class="bg-photo">
-    <img src="images/IMG10.jpg" class="bg-photo">
-    <img src="images/IMG11.jpg" class="bg-photo">
-  </div>
+<h1>Valentine Week Special 💖</h1>
 
-  <!-- Question -->
-  <div id="valentineQuestion" class="question">
-    <p>Ms.Marilyn Antony Anathazhath Saju, Will you be my Valentine? 💖</p>
-    <div class="button-group">
-      <button id="yesBtn">Yes</button>
-      <button id="noBtn">No</button>
+<div class="buttons">
+    <button onclick="openPopup('valentine')">Valentine's Day</button>
+    <button onclick="openPopup('rose')">Rose Day</button>
+    <button onclick="openPopup('propose')">Propose Day</button>
+    <button onclick="openPopup('chocolate')">Chocolate Day</button>
+    <button onclick="openPopup('teddy')">Teddy Day</button>
+    <button onclick="openPopup('promise')">Promise Day</button>
+    <button onclick="openPopup('hug')">Hug Day</button>
+    <button onclick="openPopup('kiss')">Kiss Day</button>
+</div>
+
+<div id="popup" onclick="closePopup()">
+    <div id="popupContent" class="popup-content">
+        <div class="popup-text" id="popupMessage"></div>
+        <button class="close-btn">Close</button>
     </div>
-  </div>
+</div>
 
-  <!-- Music & Love Letter Buttons -->
-  <button id="musicBtn" style="display:none;">🎵 Music</button>
-  <button id="letterBtn" style="display:none;">💌 Love Letter</button>
+<script>
+const messages = {
+    valentine: "Happy Valentine’s Day ❤️\nYou are my forever and always!",
+    rose: "Happy Rose Day 🌹\nEvery rose reminds me of your beauty.",
+    propose: "Happy Propose Day 💍\nWill you be mine forever?",
+    chocolate: "Happy Chocolate Day 🍫\nLife is sweeter with you!",
+    teddy: "Happy Teddy Day 🧸\nSending you a big cuddly teddy!",
+    promise: "Happy Promise Day 🤝\nI promise to always love you.",
+    hug: "Happy Hug Day 🤗\nHere’s a warm hug just for you!",
+    kiss: "Happy Kiss Day 😘\nA sweet kiss to brighten your day!"
+};
 
-  <!-- Love Letter Popup -->
-  <div id="loveLetterPopup" class="modal">
-    <span id="closeLetter" class="close">&times;</span>
-    <div id="letterContent"></div>
-  </div>
+function openPopup(day) {
+    const popup = document.getElementById("popup");
+    const popupContent = document.getElementById("popupContent");
+    const message = document.getElementById("popupMessage");
 
-  <!-- Heart Container (optional wrapper) -->
-  <div id="heartContainer"></div>
+    popupContent.className = "popup-content " + day;
+    message.innerText = messages[day];
 
-  <script src="js/script.js"></script>
+    popup.style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+</script>
+
 </body>
 </html>
