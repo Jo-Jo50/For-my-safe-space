@@ -8,43 +8,56 @@
 </head>
 <body>
 
-  <!-- Background slider container -->
-  <div id="bgContainer">
-    <img src="images/IMG1.jpg" class="bg-photo active">
-    <img src="images/IMG2.jpg" class="bg-photo">
-    <img src="images/IMG3.jpg" class="bg-photo">
-    <img src="images/IMG4.jpg" class="bg-photo">
-    <img src="images/IMG5.jpg" class="bg-photo">
-    <img src="images/IMG6.jpg" class="bg-photo">
-    <img src="images/IMG7.jpg" class="bg-photo">
-    <img src="images/IMG8.jpg" class="bg-photo">
-    <img src="images/IMG9.jpg" class="bg-photo">
-    <img src="images/IMG10.jpg" class="bg-photo">
-    <img src="images/IMG11.jpg" class="bg-photo">
+<!-- Background slider container -->
+<div id="bgContainer">
+  <img src="images/IMG1.jpg" class="bg-photo active">
+  <img src="images/IMG2.jpg" class="bg-photo">
+  <img src="images/IMG3.jpg" class="bg-photo">
+  <img src="images/IMG4.jpg" class="bg-photo">
+  <img src="images/IMG5.jpg" class="bg-photo">
+  <img src="images/IMG6.jpg" class="bg-photo">
+  <img src="images/IMG7.jpg" class="bg-photo">
+  <img src="images/IMG8.jpg" class="bg-photo">
+  <img src="images/IMG9.jpg" class="bg-photo">
+  <img src="images/IMG10.jpg" class="bg-photo">
+  <img src="images/IMG11.jpg" class="bg-photo">
+</div>
+
+<!-- Question -->
+<div id="valentineQuestion" class="question">
+  <p>Ms.Marilyn Antony Anathazhath Saju, Will you be my Valentine? 💖</p>
+  <div class="button-group">
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
   </div>
+</div>
 
-  <!-- Question -->
-  <div id="valentineQuestion" class="question">
-    <p>Ms.Marilyn Antony Anathazhath Saju, Will you be my Valentine? 💖</p>
-    <div class="button-group">
-      <button id="yesBtn">Yes</button>
-      <button id="noBtn">No</button>
-    </div>
+<!-- Buttons After YES -->
+<div id="specialButtons" style="display:none;" class="special-buttons">
+  <button class="dayBtn" data-day="valentine">❤️ Valentine's Day</button>
+  <button class="dayBtn" data-day="rose">🌹 Rose Day</button>
+  <button class="dayBtn" data-day="propose">💍 Propose Day</button>
+  <button class="dayBtn" data-day="chocolate">🍫 Chocolate Day</button>
+  <button class="dayBtn" data-day="teddy">🧸 Teddy Day</button>
+  <button class="dayBtn" data-day="promise">🤝 Promise Day</button>
+  <button class="dayBtn" data-day="hug">🤗 Hug Day</button>
+  <button class="dayBtn" data-day="kiss">😘 Kiss Day</button>
+</div>
+
+<!-- Music Button -->
+<button id="musicBtn" style="display:none;">🎵 Music</button>
+
+<!-- Popup Modal -->
+<div id="dayPopup" class="modal">
+  <span id="closePopup" class="close">&times;</span>
+  <div id="popupShape" class="popup-shape">
+    <div id="popupText"></div>
   </div>
+</div>
 
-  <!-- Music & Love Letter Buttons -->
-  <button id="musicBtn" style="display:none;">🎵 Music</button>
-  <button id="letterBtn" style="display:none;">💌 Love Letter</button>
+<!-- Heart Container -->
+<div id="heartContainer"></div>
 
-  <!-- Love Letter Popup -->
-  <div id="loveLetterPopup" class="modal">
-    <span id="closeLetter" class="close">&times;</span>
-    <div id="letterContent"></div>
-  </div>
-
-  <!-- Heart Container (optional wrapper) -->
-  <div id="heartContainer"></div>
-
-  <script src="js/script.js"></script>
+<script src="js/script.js"></script>
 </body>
 </html>
