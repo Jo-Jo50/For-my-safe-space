@@ -45,20 +45,19 @@
 /* =========================
    QUESTION BOX
 ========================= */
-/* Valentine Question Box */
 .question {
   position: fixed;
   top: 20%; /* move slightly higher */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(255,255,255,0.95);
-  padding: 40px 50px; /* more padding */
+  padding: 40px 50px;
   border-radius: 12px;
   z-index: 100;
   max-width: 90%;
-  width: 450px; /* larger width */
+  width: 450px;
   text-align: center;
-  font-size: 22px; /* bigger font for readability */
+  font-size: 22px;
   line-height: 1.5;
   box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
@@ -99,7 +98,7 @@
 }
 
 /* =========================
-   LOVE LETTER MODAL
+   LOVE LETTER MODAL / DAY POPUPS
 ========================= */
 .modal {
   display: none;
@@ -145,4 +144,80 @@ body::after {
   height: 100vh;
   pointer-events: none;
   z-index: 0;
+}
+
+/* =========================
+   SPECIAL DAY BUTTONS
+========================= */
+#specialButtons {
+  position: fixed;
+  bottom: 80px; /* above music button */
+  width: 100%;
+  text-align: center;
+  z-index: 150;
+}
+
+.dayBtn {
+  margin: 5px;
+  padding: 10px 18px;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  background: pink;
+  color: #900;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.dayBtn:hover {
+  transform: scale(1.1);
+  background: crimson;
+  color: white;
+}
+
+/* =========================
+   DAY POPUP MODAL
+========================= */
+#dayPopup .popup-shape {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  color: white;
+  font-size: 18px;
+  animation: popIn 0.5s ease;
+}
+
+/* Shapes for each day */
+.popup-shape.valentine {
+  background: red;
+  clip-path: polygon(50% 15%, 61% 0, 80% 0, 100% 20%, 100% 40%, 50% 100%, 0 40%, 0 20%, 20% 0, 39% 0);
+}
+
+.popup-shape.rose { background: #e60026; border-radius: 50%; }
+.popup-shape.propose { background: gold; border-radius: 50%; border: 6px solid white; }
+.popup-shape.chocolate { background: #5c3317; border-radius: 20px; }
+.popup-shape.teddy { background: #c68642; border-radius: 40%; }
+.popup-shape.promise { background: #ff69b4; border-radius: 30%; }
+.popup-shape.hug { background: #ff8fab; border-radius: 50%; }
+.popup-shape.kiss { background: #ff0066; clip-path: ellipse(50% 35% at 50% 50%); }
+
+@keyframes popIn {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+
+/* Close button inside day popup */
+#dayPopup .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  cursor: pointer;
+  color: white;
+  z-index: 210;
 }
