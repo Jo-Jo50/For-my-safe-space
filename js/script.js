@@ -80,7 +80,7 @@ const messages = {
    
          I am so lucky to love someone as incredible as you. 
    
-         Belated Happy Rose Day 🌹",
+         Belated Happy Rose Day 🌹',
   propose: "I just want to say that I choose you today and every day. Being with you is the easiest and best decision I have ever made. You are not just my girlfriend, you are my best friend and my safe space (I still believe in the judgement free safee space). If I had to live this life all over again, I would still find my way back to you. I promise to always grow with you and build something beautiful together. Belated Happy Propose Day 💍",
   chocolate: "Life with you is sweeter than any chocolate (Even more than chocolate cheesecake from Goodies), and every moment with you feels like a treat I never want to end. You add flavor and joy to my life in ways I cannot even explain. Even the simplest moments feel special when I am with you.  Belated Happy Chocolate Day 🍫",
   teddy: "I wish I could be your teddy, someone you hold close whenever you need comfort, warmth, or just a reminder that you are deeply loved. I want to be the person you turn to on your hardest days and the one you laugh with on your happiest ones. Whenever you feel overwhelmed, remember that you always have me. I will always be here to hold you tight (and grab your boobs). Belated Happy Teddy Day 🧸",
