@@ -72,13 +72,13 @@ yesBtn.addEventListener("click", () => {
    POPUPS WITH TYPEWRITER
 ========================= */
 const messages = {
-  rose: "Happy Rose Day 🌹\nEvery rose reminds me of your beauty.",
-  propose: "Happy Propose Day 💍\nWill you stay with me forever?",
-  chocolate: "Happy Chocolate Day 🍫\nLife is sweeter with you.",
-  teddy: "Happy Teddy Day 🧸\nSending you the biggest cuddle!",
-  promise: "Happy Promise Day 🤝\nI promise to always choose you.",
-  hug: "Happy Hug Day 🤗\nCome here you!",
-  kiss: "Happy Kiss Day 😘\nOne sweet kiss just for you!",
+  rose: "If I could, I would give you a garden full of roses (or Lillies), each one representing how much you mean to me. You are the most beautiful part of my life. Every time I think of you, my heart feels full and grateful (and horny). I am so lucky to love someone as incredible as you. Belated Happy Rose Day 🌹",
+  propose: "I just want to say that I choose you today and every day. Being with you is the easiest and best decision I have ever made. You are not just my girlfriend, you are my best friend and my safe space (I still believe in the judgement free safee space). If I had to live this life all over again, I would still find my way back to you. I promise to always grow with you and build something beautiful together. Belated Happy Propose Day 💍",
+  chocolate: "Life with you is sweeter than any chocolate (Even more than chocolate cheesecake from Goodies), and every moment with you feels like a treat I never want to end. You add flavor and joy to my life in ways I cannot even explain. Even the simplest moments feel special when I am with you.  Belated Happy Chocolate Day 🍫",
+  teddy: "I wish I could be your teddy, someone you hold close whenever you need comfort, warmth, or just a reminder that you are deeply loved. I want to be the person you turn to on your hardest days and the one you laugh with on your happiest ones. Whenever you feel overwhelmed, remember that you always have me. I will always be here to hold you tight (and grab your boobs). Belated Happy Teddy Day 🧸",
+  promise: "I promise to stand by you, support you, and love you with all my heart. No matter what life brings, I am always on your team (Never Team Leanne). I promise to listen, to understand, and to never stop putting effort into us. I will celebrate your wins and help carry your burdens. Belated Happy Promise Day 🤝",
+  hug: "If I could, I would wrap you in the biggest hug right now and never let go, because you are my safest and happiest place. Your hugs feel like home to me. In your arms, everything stressful fades away (Us being the same height helps a lot). I cannot wait for all the warm, comforting hugs we will share in the future. Belated Happy Hug Day 🤗",
+  kiss: "Every kiss from you feels like magic, and I cannot wait to share a million more with you (Except when you are wearing lipstick, I guess). Your kisses make my heart race in the best way. They are soft, sweet, and unforgettable, just like you. Being close to you is my favorite place to be. Belated Happy Kiss Day 😘",
   valentine: `My Dearest Annie, My Love, My Beautiful Queen ❤️,
   
             I just wanted to take a minute to tell you how much I love you. You are basically my favorite human, my partner-in-crime, my heart. And I just wanted to make sure you knew that—loudly and clearly. ❤️
@@ -91,9 +91,13 @@ const messages = {
 
             I promise to always be there for you, to support you, to make you laugh when life gets tough, to love you with everything I have and to make you wet, horny and scream my name.  I promise to love you more than Leanne. Thank you for all the boobie privileges. I also promise to give you peace during your downloading sessions. One day, I hope that I can hear the dreadful farts you keep on mentioning. You are my heart, my happiness, my everything. ❤️
 
+            HAPPY VALENTINES DAY MY LOVE ❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️!!!
+
+            If our CB's allow, would you like to go out for a Valentines Lunch with me?
+
             Forever yours (and still probably thinking about you)❤️,
 
-            Dumb, Dumb, Dumb❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️`
+            Dumb, Dumb, Dumb❤️`
 };
 
 const popup = document.getElementById("dayPopup");
