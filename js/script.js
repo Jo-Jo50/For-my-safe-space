@@ -69,9 +69,16 @@ yesBtn.addEventListener("click", () => {
 
 
 /* =========================
-   VALENTINE WEEK POPUPS WITH TYPEWRITER
+   POPUPS WITH TYPEWRITER
 ========================= */
 const messages = {
+  rose: "Happy Rose Day 🌹\nEvery rose reminds me of your beauty.",
+  propose: "Happy Propose Day 💍\nWill you stay with me forever?",
+  chocolate: "Happy Chocolate Day 🍫\nLife is sweeter with you.",
+  teddy: "Happy Teddy Day 🧸\nSending you the biggest cuddle!",
+  promise: "Happy Promise Day 🤝\nI promise to always choose you.",
+  hug: "Happy Hug Day 🤗\nCome here you!",
+  kiss: "Happy Kiss Day 😘\nOne sweet kiss just for you!",
   valentine: `My Dearest Annie, My Love, My Beautiful Queen ❤️,
   
             I just wanted to take a minute to tell you how much I love you. You are basically my favorite human, my partner-in-crime, my heart. And I just wanted to make sure you knew that—loudly and clearly. ❤️
@@ -86,27 +93,24 @@ const messages = {
 
             Forever yours (and still probably thinking about you)❤️,
 
-            Dumb, Dumb, Dumb❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️`,
-
-  rose: "Happy Rose Day 🌹\nEvery rose reminds me of your beauty.",
-  propose: "Happy Propose Day 💍\nWill you stay with me forever?",
-  chocolate: "Happy Chocolate Day 🍫\nLife is sweeter with you.",
-  teddy: "Happy Teddy Day 🧸\nSending you the biggest cuddle!",
-  promise: "Happy Promise Day 🤝\nI promise to always choose you.",
-  hug: "Happy Hug Day 🤗\nCome here you!",
-  kiss: "Happy Kiss Day 😘\nOne sweet kiss just for you!"
+            Dumb, Dumb, Dumb❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️`
 };
 
 const popup = document.getElementById("dayPopup");
-const popupShape = document.getElementById("popupShape");
 const popupText = document.getElementById("popupText");
 const closePopup = document.getElementById("closePopup");
 
 document.querySelectorAll(".dayBtn").forEach(btn => {
   btn.addEventListener("click", () => {
     const day = btn.dataset.day;
-    popupShape.className = "popup-shape " + day;
+
+    // Reset popup shape (use default rectangular)
+    popup.className = "modal";
+
+    // Show popup
     popup.style.display = "flex";
+
+    // Typewriter text
     typeWriter(messages[day]);
   });
 });
@@ -126,7 +130,7 @@ function typeWriter(text) {
     } else {
       clearInterval(interval);
     }
-  }, 40); // adjust speed here
+  }, 40);
 }
 
 // Close popup
