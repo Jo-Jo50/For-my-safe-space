@@ -69,24 +69,24 @@ yesBtn.addEventListener("click", () => {
 
 
 /* =========================
-   VALENTINE WEEK POPUPS
+   VALENTINE WEEK POPUPS WITH TYPEWRITER
 ========================= */
 const messages = {
-  valentine: `My Dearest Annie, My Love, My Beautiful Queen,
+  valentine: `My Dearest Annie, My Love, My Beautiful Queen ❤️,
   
-            I just wanted to take a minute to tell you how much I love you. You are basically my favorite human, my partner-in-crime, my heart. And I just wanted to make sure you knew that—loudly and clearly.
+            I just wanted to take a minute to tell you how much I love you. You are basically my favorite human, my partner-in-crime, my heart. And I just wanted to make sure you knew that—loudly and clearly. ❤️
 
-            I keep catching myself smiling for no reason, and then I realize it is because I am thinking about you. Somehow, you have this magical ability to make life feel lighter, funnier, and more like something I actually want to show up for every day. I love how you make ordinary things - like grocery shopping or walking to the car - feel like little adventures. And I love how you make me want to be a better person.
+            I keep catching myself smiling for no reason, and then I realize it is because I am thinking about you. Somehow, you have this magical ability to make life feel lighter, funnier, and more like something I actually want to show up for every day. I love how you make ordinary things - like grocery shopping or walking to the car - feel like little adventures. And I love how you make me want to be a better person. ❤️
 
-            I love the way your mind works, your stubbornness, your kindness, and even your overthought scenarios. Honestly, I do not know how you do it, but somehow you have made me a better, happier, more ridiculous version of myself.
+            I love the way your mind works, your stubbornness, your kindness, and even your overthought scenarios. Honestly, I do not know how you do it, but somehow you have made me a better, happier, more ridiculous version of myself. ❤️
 
-            I am completely, unashamedly, and ridiculously in love with you. I love you for all the big, beautiful things about you, but also for all the little weird things that make you you. I love that I can be totally myself around you, which is terrifying and amazing all at once. And I promise to keep loving you, annoying you, making you laugh, and occasionally being dramatic about random stuff for as long as you will let me.
+            I am completely, unashamedly, and ridiculously in love with you. I love you for all the big, beautiful things about you, but also for all the little weird things that make you you. I love that I can be totally myself around you, which is terrifying and amazing all at once. And I promise to keep loving you, annoying you, making you laugh, and occasionally being dramatic about random stuff for as long as you will let me. ❤️
 
-            I promise to always be there for you, to support you, to make you laugh when life gets tough, to love you with everything I have and to make you wet, horny and scream my name.  I promise to love you more than Leanne. Thank you for all the boobie privileges. I also promise to give you peace during your downloading sessions. One day, I hope that I can hear the dreadful farts you keep on mentioning. You are my heart, my happiness, my everything.
+            I promise to always be there for you, to support you, to make you laugh when life gets tough, to love you with everything I have and to make you wet, horny and scream my name.  I promise to love you more than Leanne. Thank you for all the boobie privileges. I also promise to give you peace during your downloading sessions. One day, I hope that I can hear the dreadful farts you keep on mentioning. You are my heart, my happiness, my everything. ❤️
 
-            Forever yours (and still probably thinking about you),
+            Forever yours (and still probably thinking about you)❤️,
 
-            Dumb, Dumb, Dumb`,
+            Dumb, Dumb, Dumb❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️`,
 
   rose: "Happy Rose Day 🌹\nEvery rose reminds me of your beauty.",
   propose: "Happy Propose Day 💍\nWill you stay with me forever?",
@@ -106,11 +106,30 @@ document.querySelectorAll(".dayBtn").forEach(btn => {
   btn.addEventListener("click", () => {
     const day = btn.dataset.day;
     popupShape.className = "popup-shape " + day;
-    popupText.innerText = messages[day];
     popup.style.display = "flex";
+    typeWriter(messages[day]);
   });
 });
 
+// Typewriter effect
+function typeWriter(text) {
+  popupText.innerHTML = ""; // clear previous
+  let i = 0;
+  const interval = setInterval(() => {
+    if (i < text.length) {
+      if (text[i] === "\n") {
+        popupText.innerHTML += "<br>";
+      } else {
+        popupText.innerHTML += text[i];
+      }
+      i++;
+    } else {
+      clearInterval(interval);
+    }
+  }, 40); // adjust speed here
+}
+
+// Close popup
 closePopup.addEventListener("click", () => {
   popup.style.display = "none";
 });
